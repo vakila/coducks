@@ -1,5 +1,6 @@
 import { useState } from "react";
 import * as ToggleGroup from "@radix-ui/react-toggle-group";
+import * as Accordion from "@radix-ui/react-accordion";
 import { Images } from "./images";
 import { Icon } from "./icon";
 import type { CartItem, Product, Review } from "../types";
@@ -35,6 +36,71 @@ export const ProductPage = ({
             Add to Cart
           </button>
         </div>
+
+        <Accordion.Root
+          type="multiple"
+          defaultValue={["description", "features"]}
+          className="w-full rounded mt-5"
+        >
+          <Accordion.Item
+            value="description"
+            className="mb-2 border-gray-med border-[1px] rounded-lg"
+          >
+            <Accordion.Trigger className="font-medium flex w-full items-center justify-between bg-gray-light px-4 py-3 rounded-lg [&>img]:data-[state=open]:rotate-180">
+              Description <Icon name="CaretDown" />
+            </Accordion.Trigger>
+            <Accordion.Content className="px-4 py-3">
+              {product.description}
+            </Accordion.Content>
+          </Accordion.Item>
+
+          <Accordion.Item
+            value="features"
+            className="mb-2 border-gray-med border-[1px] rounded-lg"
+          >
+            <Accordion.Trigger className="font-medium flex w-full items-center justify-between bg-gray-light px-4 py-3 rounded-lg [&>img]:data-[state=open]:rotate-180">
+              Features <Icon name="CaretDown" />
+            </Accordion.Trigger>
+            <Accordion.Content className="px-4 py-3">
+              <ul className="pl-4">
+                {product.features.map((f, i) => (
+                  <li className="list-disc" key={i}>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+            </Accordion.Content>
+          </Accordion.Item>
+
+          <Accordion.Item
+            value="reviews"
+            className="mb-2 border-gray-med border-[1px] rounded-lg"
+          >
+            <Accordion.Trigger className="font-medium flex w-full items-center justify-between bg-gray-light px-4 py-3 rounded-lg [&>img]:data-[state=open]:rotate-180">
+              Reviews <Icon name="CaretDown" />
+            </Accordion.Trigger>
+            <Accordion.Content className="px-4 py-3">
+              <div className="w-100 ">
+                {product.reviews.map((r, i) => (
+                  <div
+                    className="w-full border-b-2 px-2 py-4 last-of-type:border-b-0"
+                    key={i}
+                  >
+                    <div className="flex justify-between">
+                      <Icon name={`Stars-${r.rating}`} />
+                      <span className="text-sm text-gray-dark">
+                        {new Date(r.date).toDateString()}
+                      </span>
+                    </div>
+                    <div>
+                      {r.text ? <p className="pt-3">{r.text}</p> : null}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </Accordion.Content>
+          </Accordion.Item>
+        </Accordion.Root>
       </div>
     </main>
   );
