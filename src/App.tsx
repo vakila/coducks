@@ -23,7 +23,7 @@ function App({ product, user }: { product: Product; user: User }) {
 
   return (
     <div>
-      <Header />
+      <Header cart={cart} user={user} />
       <main>
         <h2 className="text-[28px] p-5">{product.name}</h2>
       </main>
