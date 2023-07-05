@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Header } from "./components/header";
 import "./tailwind.css";
 import type { Product, Cart, User, CartItem } from "./types";
+import { ProductPage } from "./components/product-page";
 
 function App({ product, user }: { product: Product; user: User }) {
   const [cart, setCart] = useState<Cart>([]);
@@ -24,9 +25,9 @@ function App({ product, user }: { product: Product; user: User }) {
   return (
     <div>
       <Header cart={cart} user={user} />
-      <main>
-        <h2 className="text-[28px] p-5">{product.name}</h2>
-      </main>
+
+      <ProductPage product={product} />
+
       <footer className="text-center text-sm p-5">
         Made with ♥ in&nbsp;
         <a href="https://codux.com">Codux</a>
