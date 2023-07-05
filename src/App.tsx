@@ -25,9 +25,9 @@ function App({ product, user }: { product: Product; user: User }) {
     <div>
       <Header />
       <main>
-        <h2>{product.name}</h2>
+        <h2 className="text-[28px] p-5">{product.name}</h2>
       </main>
-      <footer>
+      <footer className="text-center text-sm p-5">
         Made with ♥ in&nbsp;
         <a href="https://codux.com">Codux</a>
         &nbsp;with&nbsp;
