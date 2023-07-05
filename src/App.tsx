@@ -1,33 +1,40 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import { Header } from "./components/header";
 import "./tailwind.css";
+import type { Product, Cart, User, CartItem } from "./types";
 
-function App() {
-  const [count, setCount] = useState(0);
+function App({ product, user }: { product: Product; user: User }) {
+  const [cart, setCart] = useState<Cart>([]);
+
+  function addToCart(newItem: CartItem) {
+    const isSameItem = (i: CartItem) =>
+      i.product.id === newItem.product.id && i.size === newItem.size;
+    const alreadyInCart = cart.filter(isSameItem).length > 0;
+    if (alreadyInCart) {
+      setCart(
+        cart.map((i) =>
+          isSameItem(i) ? { ...i, quantity: i.quantity + newItem.quantity } : i
+        )
+      );
+    } else {
+      setCart([...cart, newItem]);
+    }
+  }
 
   return (
-    <div className="w-screen bg-black text-white p-10">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <div>
+      <Header />
+      <main>
+        <h2>{product.name}</h2>
+      </main>
+      <footer>
+        Made with ♥ in&nbsp;
+        <a href="https://codux.com">Codux</a>
+        &nbsp;with&nbsp;
+        <a href="https://radix-ui.com">RadixUI</a>
+        &nbsp;and&nbsp;
+        <a href="https://tailwindcss.com">TailwindCSS</a>
+      </footer>
     </div>
   );
 }
