@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Radix Components",
+        "components": [
+            {
+                "filePath": "@radix-ui/react-navigation-menu",
+                "exportName": "default",
+                "name": "NavigationMenu"
+            },
+            {
+                "filePath": "@radix-ui/react-aspect-ratio",
+                "exportName": "default",
+                "name": "AspectRatio"
+            },
+            {
+                "filePath": "@radix-ui/react-accordion",
+                "exportName": "default",
+                "name": "Accordion"
+            },
+            {
+                "filePath": "@radix-ui/react-toggle-group",
+                "exportName": "default",
+                "name": "ToggleGroup"
+            }
+        ]
+    }
+]
