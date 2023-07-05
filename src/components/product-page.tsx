@@ -2,8 +2,9 @@ import { useState } from "react";
 import * as ToggleGroup from "@radix-ui/react-toggle-group";
 import * as Accordion from "@radix-ui/react-accordion";
 import { Images } from "./images";
-import { Icon } from "./icon";
 import type { CartItem, Product, Review } from "../types";
+import { ReactComponent as DownArrow } from "../assets/icons/CaretDown.svg";
+import { Icon } from "./icon";
 
 export const ProductPage = ({
   product,
@@ -47,7 +48,7 @@ export const ProductPage = ({
             className="mb-2 border-gray-med border-[1px] rounded-lg"
           >
             <Accordion.Trigger className="font-medium flex w-full items-center justify-between bg-gray-light px-4 py-3 rounded-lg [&>img]:data-[state=open]:rotate-180">
-              Description <Icon name="CaretDown" />
+              Description <DownArrow />
             </Accordion.Trigger>
             <Accordion.Content className="px-4 py-3">
               {product.description}
@@ -59,7 +60,7 @@ export const ProductPage = ({
             className="mb-2 border-gray-med border-[1px] rounded-lg"
           >
             <Accordion.Trigger className="font-medium flex w-full items-center justify-between bg-gray-light px-4 py-3 rounded-lg [&>img]:data-[state=open]:rotate-180">
-              Features <Icon name="CaretDown" />
+              Features <DownArrow />
             </Accordion.Trigger>
             <Accordion.Content className="px-4 py-3">
               <ul className="pl-4">
@@ -77,7 +78,7 @@ export const ProductPage = ({
             className="mb-2 border-gray-med border-[1px] rounded-lg"
           >
             <Accordion.Trigger className="font-medium flex w-full items-center justify-between bg-gray-light px-4 py-3 rounded-lg [&>img]:data-[state=open]:rotate-180">
-              Reviews <Icon name="CaretDown" />
+              Reviews <DownArrow />
             </Accordion.Trigger>
             <Accordion.Content className="px-4 py-3">
               <div className="w-100 ">
@@ -87,7 +88,7 @@ export const ProductPage = ({
                     key={i}
                   >
                     <div className="flex justify-between">
-                      <Icon name={`Stars-${r.rating}`} />
+                      <Icon amount={r.rating} />
                       <span className="text-sm text-gray-dark">
                         {new Date(r.date).toDateString()}
                       </span>
@@ -113,7 +114,7 @@ export const RatingAverage = ({ reviews }: { reviews: Review[] }) => {
     reviews.map((r) => r.rating).reduce((a, b) => a + b) / reviews.length;
   return (
     <div className="flex items-center gap-3">
-      <Icon name={`Stars-${Math.round(avgRating)}`} />
+      <Icon amount={Math.round(avgRating)} />
       <p className="whitespace-nowrap">
         {avgRating.toFixed(2)} ({reviews.length})
       </p>

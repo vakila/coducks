@@ -1,6 +1,7 @@
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
-import { Icon } from "./icon";
 import type { Cart, User } from "../types";
+import { ReactComponent as CartIcon } from "../assets/icons/Cart.svg";
+import { ReactComponent as UserIcon } from "../assets/icons/User.svg";
 
 export const Header = ({ cart, user }: { cart: Cart; user?: User }) => {
   return (
@@ -21,7 +22,7 @@ export const Header = ({ cart, user }: { cart: Cart; user?: User }) => {
 
           <NavigationMenu.Item key="cart" className="relative">
             <NavigationMenu.Trigger className="">
-              <Icon name="Cart" />
+              <CartIcon />
             </NavigationMenu.Trigger>
             <NavigationMenu.Content className="w-max absolute right-0 top-10 py-[10px]  bg-white border-[1px] border-gray-med rounded-lg">
               <div className="absolute -top-2 right-[0.7rem] bg-white rotate-45 w-4 h-4 border-t-[1px] border-l-[1px] rounded-tl-md border-gray-med z-10"></div>
@@ -75,7 +76,7 @@ export const Header = ({ cart, user }: { cart: Cart; user?: User }) => {
 
           <NavigationMenu.Item key="account" className="relative">
             <NavigationMenu.Trigger className="">
-              <Icon name="User" />
+              <UserIcon />
             </NavigationMenu.Trigger>
             <NavigationMenu.Content className="w-max absolute right-0 top-10 py-[10px] px-4 bg-white border-[1px] border-gray-med rounded-lg">
               <div className="absolute -top-2 right-[0.7rem] bg-white rotate-45 w-4 h-4 border-t-[1px] border-l-[1px] rounded-tl-md border-gray-med z-1"></div>
