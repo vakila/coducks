@@ -25,12 +25,49 @@ export const Header = ({ cart, user }: { cart: Cart; user?: User }) => {
             </NavigationMenu.Trigger>
             <NavigationMenu.Content className="w-max absolute right-0 top-10 py-[10px] px-4 bg-white border-[1px] border-gray-med rounded-lg">
               <div className="absolute -top-2 right-[0.7rem] bg-white rotate-45 w-4 h-4 border-t-[1px] border-l-[1px] rounded-tl-md border-gray-med z-10"></div>
-
-              <NavigationMenu.Link href="/checkout">
-                <button className="bg-yellow rounded py-2 px-[19px]">
-                  Checkout
-                </button>
-              </NavigationMenu.Link>
+              {cart.length ? (
+                <>
+                  <ul>
+                    {cart.map((item, i) => (
+                      <li
+                        key={i}
+                        className="flex justify-between items-baseline gap-3"
+                      >
+                        <div className="flex gap-2 justify-left items-baseline">
+                          <span className="w-[2ch] text-right">
+                            {item.quantity}
+                          </span>
+                          <span>
+                            {item.product.name} ({item.size})
+                          </span>
+                        </div>
+                        <span>${item.product.price.toFixed(2)}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <hr className="my-2" />
+                  <p className="flex justify-between items-baseline gap-3">
+                    {" "}
+                    <span>Subtotal</span>{" "}
+                    <span>
+                      $
+                      {cart
+                        .map(
+                          ({ product, quantity }) => product.price * quantity
+                        )
+                        .reduce((a, b) => a + b)
+                        .toFixed(2)}
+                    </span>{" "}
+                  </p>
+                  <NavigationMenu.Link href="/checkout">
+                    <button className="bg-yellow rounded py-2 px-[19px]">
+                      Checkout
+                    </button>
+                  </NavigationMenu.Link>
+                </>
+              ) : (
+                <p>No items</p>
+              )}
             </NavigationMenu.Content>
           </NavigationMenu.Item>
 
