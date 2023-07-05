@@ -1,8 +1,14 @@
 import { Images } from "./images";
 import { Icon } from "./icon";
-import type { Product, Review } from "../types";
+import type { CartItem, Product, Review } from "../types";
 
-export const ProductPage = ({ product }: { product: Product }) => {
+export const ProductPage = ({
+  product,
+  addToCart,
+}: {
+  product: Product;
+  addToCart: (item: CartItem) => void;
+}) => {
   return (
     <main className="grid grid-cols-2 grid-rows-auto gap-2">
       <Images images={product.images} />
@@ -13,6 +19,15 @@ export const ProductPage = ({ product }: { product: Product }) => {
           <span>${product.price}</span>
         </h2>
         <RatingAverage reviews={product.reviews} />
+
+        <div className="flex justify-between">
+          <button
+            className="bg-black text-white px-5 py-2 rounded"
+            onClick={() => addToCart({ product, size: "S", quantity: 1 })}
+          >
+            Add to Cart
+          </button>
+        </div>
       </div>
     </main>
   );

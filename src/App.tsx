@@ -26,7 +26,7 @@ function App({ product, user }: { product: Product; user: User }) {
     <div>
       <Header cart={cart} user={user} />
 
-      <ProductPage product={product} />
+      <ProductPage product={product} addToCart={addToCart} />
 
       <footer className="text-center text-sm p-5">
         Made with ♥ in&nbsp;

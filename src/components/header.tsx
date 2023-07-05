@@ -23,18 +23,18 @@ export const Header = ({ cart, user }: { cart: Cart; user?: User }) => {
             <NavigationMenu.Trigger className="">
               <Icon name="Cart" />
             </NavigationMenu.Trigger>
-            <NavigationMenu.Content className="w-max absolute right-0 top-10 py-[10px] px-4 bg-white border-[1px] border-gray-med rounded-lg">
+            <NavigationMenu.Content className="w-max absolute right-0 top-10 py-[10px]  bg-white border-[1px] border-gray-med rounded-lg">
               <div className="absolute -top-2 right-[0.7rem] bg-white rotate-45 w-4 h-4 border-t-[1px] border-l-[1px] rounded-tl-md border-gray-med z-10"></div>
               {cart.length ? (
                 <>
-                  <ul>
+                  <ul className="px-4 py-2">
                     {cart.map((item, i) => (
                       <li
                         key={i}
                         className="flex justify-between items-baseline gap-3"
                       >
                         <div className="flex gap-2 justify-left items-baseline">
-                          <span className="w-[2ch] text-right">
+                          <span className="w-[2ch] text-left">
                             {item.quantity}
                           </span>
                           <span>
@@ -45,10 +45,9 @@ export const Header = ({ cart, user }: { cart: Cart; user?: User }) => {
                       </li>
                     ))}
                   </ul>
-                  <hr className="my-2" />
-                  <p className="flex justify-between items-baseline gap-3">
-                    {" "}
-                    <span>Subtotal</span>{" "}
+                  <hr className="my-2 w-full" />
+                  <p className="flex justify-between items-baseline gap-3 px-4 py-2">
+                    <span>Subtotal</span>
                     <span>
                       $
                       {cart
@@ -57,9 +56,12 @@ export const Header = ({ cart, user }: { cart: Cart; user?: User }) => {
                         )
                         .reduce((a, b) => a + b)
                         .toFixed(2)}
-                    </span>{" "}
+                    </span>
                   </p>
-                  <NavigationMenu.Link href="/checkout">
+                  <NavigationMenu.Link
+                    href="/checkout"
+                    className="px-4 flex w-full justify-end"
+                  >
                     <button className="bg-yellow rounded py-2 px-[19px]">
                       Checkout
                     </button>
