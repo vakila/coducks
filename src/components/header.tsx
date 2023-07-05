@@ -62,13 +62,13 @@ export const Header = ({ cart, user }: { cart: Cart; user?: User }) => {
                     href="/checkout"
                     className="px-4 flex w-full justify-end"
                   >
-                    <button className="bg-yellow rounded py-2 px-[19px]">
+                    <button className="bg-yellow rounded py-2 px-4">
                       Checkout
                     </button>
                   </NavigationMenu.Link>
                 </>
               ) : (
-                <p>No items</p>
+                <p className="px-4 py-2">No items</p>
               )}
             </NavigationMenu.Content>
           </NavigationMenu.Item>
