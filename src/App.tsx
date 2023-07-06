@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Header } from "./components/header";
-import "./tailwind.css";
 import type { Product, Cart, User, CartItem } from "./types";
 import { ProductPage } from "./components/product-page";
 

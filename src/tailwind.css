@@ -1,11 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url("https://fonts.googleapis.com/css2?family=Outfit&display=swap");
-
-@layer base {
-  html {
-    font-family: Outfit, system-ui, sans-serif;
-  }
-}
