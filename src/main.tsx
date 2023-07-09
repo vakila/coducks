@@ -2,8 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./tailwind.css";
 import "./reset.css";
-import App from "./App.tsx";
-import { RUBBER_DUCKY, SCROOGE } from "./data.ts";
+import App from "./App";
+import { RUBBER_DUCKY, SCROOGE } from "./data";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
