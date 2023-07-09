@@ -16,7 +16,7 @@ export const ProductInfo = ({
   const item = { product, size: size, quantity: 1 };
 
   return (
-    <div className="flex flex-col gap-5 p-5 pr-10">
+    <div className="flex flex-col gap-5 p-5">
       <h2 className="flex justify-between text-3xl font-normal">
         <span className="w-2/3">{product.name}</span>
         <span>${product.price}</span>
