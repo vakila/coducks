@@ -45,7 +45,7 @@ export const Images = ({ images }: { images: Image[] }) => {
             <img
               role="button"
               onClick={() => setActiveIndex(i)}
-              className="h-full object-cover"
+              className="h-full bg-gray-med object-cover"
               alt={
                 alt
                   ? `Photo of product ${alt}`
