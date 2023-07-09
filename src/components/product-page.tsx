@@ -4,7 +4,7 @@ import * as Accordion from "@radix-ui/react-accordion";
 import { Images } from "./images";
 import type { CartItem, Product, Review } from "../types";
 import { ReactComponent as DownArrow } from "../assets/icons/CaretDown.svg";
-import { Icon } from "./icon";
+import { Stars } from "./ratings";
 
 export const ProductPage = ({
   product,
@@ -88,7 +88,7 @@ export const ProductPage = ({
                     key={i}
                   >
                     <div className="flex justify-between">
-                      <Icon amount={r.rating} />
+                      <Stars rating={r.rating} />
                       <span className="text-sm text-gray-dark">
                         {new Date(r.date).toDateString()}
                       </span>
@@ -114,7 +114,7 @@ export const RatingAverage = ({ reviews }: { reviews: Review[] }) => {
     reviews.map((r) => r.rating).reduce((a, b) => a + b) / reviews.length;
   return (
     <div className="flex items-center gap-3">
-      <Icon amount={Math.round(avgRating)} />
+      <Stars rating={Math.round(avgRating)} />
       <p className="whitespace-nowrap">
         {avgRating.toFixed(2)} ({reviews.length})
       </p>
