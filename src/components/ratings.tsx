@@ -1,23 +1,39 @@
-import React from "react";
-import { ReactComponent as OneStar } from "../assets/icons/Stars-1.svg";
-import { ReactComponent as TwoStar } from "../assets/icons/Stars-2.svg";
-import { ReactComponent as ThreeStar } from "../assets/icons/Stars-3.svg";
-import { ReactComponent as FourStar } from "../assets/icons/Stars-4.svg";
-import { ReactComponent as FiveStar } from "../assets/icons/Stars-5.svg";
-
 export const Stars = ({ rating }: { rating: number }) => {
-  switch (rating) {
-    case 1:
-      return <OneStar />;
-    case 2:
-      return <TwoStar />;
-    case 3:
-      return <ThreeStar />;
-    case 4:
-      return <FourStar />;
-    case 5:
-      return <FiveStar />;
-    default:
-      throw new Error("Invalid amount of stars");
-  }
+  return (
+    <svg
+      width="80"
+      height="16"
+      viewBox="0 0 80 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g id="Stars">
+        <path
+          id="Star 1"
+          d="M8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0Z"
+          fill={1 <= rating ? "#FFC328" : "#D9D9D9"}
+        />
+        <path
+          id="Star 2"
+          d="M24 0L26.3511 4.76393L31.6085 5.52786L27.8042 9.23607L28.7023 14.4721L24 12L19.2977 14.4721L20.1958 9.23607L16.3915 5.52786L21.6489 4.76393L24 0Z"
+          fill={2 <= rating ? "#FFC328" : "#D9D9D9"}
+        />
+        <path
+          id="Star 3"
+          d="M40 0L42.3511 4.76393L47.6085 5.52786L43.8042 9.23607L44.7023 14.4721L40 12L35.2977 14.4721L36.1958 9.23607L32.3915 5.52786L37.6489 4.76393L40 0Z"
+          fill={3 <= rating ? "#FFC328" : "#D9D9D9"}
+        />
+        <path
+          id="Star 4"
+          d="M56 0L58.3511 4.76393L63.6085 5.52786L59.8042 9.23607L60.7023 14.4721L56 12L51.2977 14.4721L52.1958 9.23607L48.3915 5.52786L53.6489 4.76393L56 0Z"
+          fill={4 <= rating ? "#FFC328" : "#D9D9D9"}
+        />
+        <path
+          id="Star 5"
+          d="M72 0L74.3511 4.76393L79.6085 5.52786L75.8042 9.23607L76.7023 14.4721L72 12L67.2977 14.4721L68.1958 9.23607L64.3915 5.52786L69.6489 4.76393L72 0Z"
+          fill={5 <= rating ? "#FFC328" : "#D9D9D9"}
+        />
+      </g>
+    </svg>
+  );
 };

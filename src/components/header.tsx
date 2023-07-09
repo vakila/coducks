@@ -1,7 +1,7 @@
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import type { Cart, User } from "../types";
-import { ReactComponent as CartIcon } from "../assets/icons/Cart.svg";
-import { ReactComponent as UserIcon } from "../assets/icons/User.svg";
+import { CartIcon } from "./cart";
+import { UserIcon } from "./icons";
 
 export const Header = ({ cart, user }: { cart: Cart; user?: User }) => {
   return (
@@ -20,7 +20,7 @@ export const Header = ({ cart, user }: { cart: Cart; user?: User }) => {
             </NavigationMenu.Link>
           </NavigationMenu.Item>
 
-          <NavigationMenu.Item key="cart" className="relative">
+          <NavigationMenu.Item key="cart" className="relative flex">
             <NavigationMenu.Trigger className="">
               <CartIcon />
             </NavigationMenu.Trigger>
@@ -74,7 +74,7 @@ export const Header = ({ cart, user }: { cart: Cart; user?: User }) => {
             </NavigationMenu.Content>
           </NavigationMenu.Item>
 
-          <NavigationMenu.Item key="account" className="relative">
+          <NavigationMenu.Item key="account" className="relative flex">
             <NavigationMenu.Trigger className="">
               <UserIcon />
             </NavigationMenu.Trigger>

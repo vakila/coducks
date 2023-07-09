@@ -1,7 +1,6 @@
 import { useState } from "react";
 import * as AspectRatio from "@radix-ui/react-aspect-ratio";
-import { ReactComponent as RightArrow } from "../assets/icons/CaretRight.svg";
-import { ReactComponent as LeftArrow } from "../assets/icons/CaretLeft.svg";
+import { LeftIcon, RightIcon } from "./icons";
 import type { Image } from "../types";
 
 export const Images = ({ images }: { images: Image[] }) => {
@@ -18,13 +17,13 @@ export const Images = ({ images }: { images: Image[] }) => {
           className=" absolute right-0 top-1/2 z-10 mr-2 h-8 w-8"
           onClick={() => setActiveIndex(findNextIndex())}
         >
-          <RightArrow />
+          <RightIcon />
         </button>
         <button
           className=" absolute left-0 top-1/2 z-10 ml-2 h-8 w-8"
           onClick={() => setActiveIndex(findPrevIndex())}
         >
-          <LeftArrow />
+          <LeftIcon />
         </button>
 
         <img

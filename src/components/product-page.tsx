@@ -3,7 +3,7 @@ import * as ToggleGroup from "@radix-ui/react-toggle-group";
 import * as Accordion from "@radix-ui/react-accordion";
 import { Images } from "./images";
 import type { CartItem, Product, Review } from "../types";
-import { ReactComponent as DownArrow } from "../assets/icons/CaretDown.svg";
+import { DownIcon } from "./icons";
 import { Stars } from "./ratings";
 
 export const ProductPage = ({
@@ -48,7 +48,7 @@ export const ProductPage = ({
             className="mb-2 border-gray-med border-[1px] rounded-lg"
           >
             <Accordion.Trigger className="font-medium flex w-full items-center justify-between bg-gray-light px-4 py-3 rounded-lg [&>img]:data-[state=open]:rotate-180">
-              Description <DownArrow />
+              Description <DownIcon />
             </Accordion.Trigger>
             <Accordion.Content className="px-4 py-3">
               {product.description}
@@ -60,7 +60,7 @@ export const ProductPage = ({
             className="mb-2 border-gray-med border-[1px] rounded-lg"
           >
             <Accordion.Trigger className="font-medium flex w-full items-center justify-between bg-gray-light px-4 py-3 rounded-lg [&>img]:data-[state=open]:rotate-180">
-              Features <DownArrow />
+              Features <DownIcon />
             </Accordion.Trigger>
             <Accordion.Content className="px-4 py-3">
               <ul className="pl-4">
@@ -78,7 +78,7 @@ export const ProductPage = ({
             className="mb-2 border-gray-med border-[1px] rounded-lg"
           >
             <Accordion.Trigger className="font-medium flex w-full items-center justify-between bg-gray-light px-4 py-3 rounded-lg [&>img]:data-[state=open]:rotate-180">
-              Reviews <DownArrow />
+              Reviews <DownIcon />
             </Accordion.Trigger>
             <Accordion.Content className="px-4 py-3">
               <div className="w-100 ">
