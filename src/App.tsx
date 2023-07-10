@@ -15,7 +15,7 @@ function App({ product, user }: { product: Product; user: User }) {
         <ProductInfo product={product} addToCart={addToCart} />
       </main>
 
-      <footer className="text-center text-sm p-5">
+      <footer className="">
         Made with ♥ in&nbsp;
         <a href="https://codux.com">Codux</a>
         &nbsp;with&nbsp;
