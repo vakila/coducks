@@ -11,7 +11,8 @@ function App({ product, user }: { product: Product; user: User }) {
     <div>
       <Header />
 
-      <main className="">
+      <main className="grid grid-cols-2 grid-rows-auto gap-2">
+        <Images images={product.images} />
         <ProductInfo product={product} addToCart={addToCart} />
       </main>
 
