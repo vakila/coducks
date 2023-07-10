@@ -23,8 +23,8 @@ export interface Product {
 
 export type Image = {
   url: string;
-  title: string;
-  alt?: string;
+  title?: string;
+  alt: string;
 };
 
 export type Review = {

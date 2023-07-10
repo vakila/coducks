@@ -1,3 +1,9 @@
+import imgUrl1 from "./assets/duckies_1.png";
+import imgUrl2 from "./assets/duckies_2.jpg";
+import imgUrl3 from "./assets/duckies_3.jpg";
+import imgUrl4 from "./assets/duckies_4.jpg";
+import imgUrl5 from "./assets/duckies_5.jpg";
+
 export const RUBBER_DUCKY = {
   id: "1234",
   name: "Rubber Ducky Debugging Buddy",
@@ -11,29 +17,26 @@ export const RUBBER_DUCKY = {
   ],
   images: [
     {
-      url: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Rubber_duck_assisting_with_debugging.jpg?20110928125559",
+      url: imgUrl1,
       title: "The most loyal & helpful coworker you will ever have",
       alt: "sitting on a laptop keyboard",
     },
     {
-      url: "https://upload.wikimedia.org/wikipedia/commons/9/9d/Long_hair_tabby_cat_with_a_rubber_duck.jpg?20080222113634",
-      title: "Size S",
-      alt: "in size S, sitting on a cat's head",
+      url: imgUrl2,
+      title: "No matter how big the bug, ducky is there for you",
+      alt: "sitting next to another ducky, both facing the camera",
     },
     {
-      url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Minneapolis_neighborhood_Linden_Hills_%2852197280995%29.jpg/1200px-Minneapolis_neighborhood_Linden_Hills_%2852197280995%29.jpg?20220802103156",
-      title: "Size M",
-      alt: "in size M, floating in a city park",
+      url: imgUrl3,
+      alt: "sitting next to another ducky, both in profile facing left",
     },
     {
-      url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Rubber_Duck_in_Parramatta_Park.jpg/1200px-Rubber_Duck_in_Parramatta_Park.jpg?20140118071725",
-      title: "Size L",
-      alt: "in size L, floating in a park setting with trees around",
+      url: imgUrl4,
+      alt: "swimming in different directions on a blue surface",
     },
     {
-      url: "https://upload.wikimedia.org/wikipedia/commons/1/14/Rubber_Duck_%288374802487%29.jpg?20221221203142",
-      title: "Size XL",
-      alt: "in size XL, floating along the Sydney waterfront with the city skyline behind",
+      url: imgUrl5,
+      alt: "sitting in profile facing another ducky sitting facing the camera",
     },
   ],
   reviews: [
