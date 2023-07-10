@@ -9,7 +9,7 @@ function App({ product, user }: { product: Product; user: User }) {
 
   return (
     <div>
-      <Header />
+      <Header cart={cart} user={user} />
 
       <main className="grid grid-cols-2 grid-rows-auto gap-2">
         <Images images={product.images} />

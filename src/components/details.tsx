@@ -1,3 +1,4 @@
+import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import type { Cart, User } from "../types";
 
 export function CartDetails({ cart }: { cart: Cart }) {
@@ -30,9 +31,12 @@ export function CartDetails({ cart }: { cart: Cart }) {
                 .toFixed(2)}
             </span>
           </p>
-          <a href="/checkout">
+          <NavigationMenu.Link
+            href="/checkout"
+            className="px-4 flex w-full justify-end"
+          >
             <button className="bg-yellow rounded py-2 px-4">Checkout</button>
-          </a>
+          </NavigationMenu.Link>
         </>
       ) : (
         <p className="px-4 py-2">No items</p>
@@ -48,16 +52,16 @@ export function UserDetails({ user }: { user?: User }) {
       {user ? (
         <>
           <p className="pb-3">{user.name}</p>
-          <a href="/logout">
+          <NavigationMenu.Link href="/logout">
             <button className="bg-yellow rounded py-2 px-[19px]">
               Log out
             </button>
-          </a>
+          </NavigationMenu.Link>
         </>
       ) : (
-        <a href="/login">
+        <NavigationMenu.Link href="/login">
           <button className="bg-yellow rounded py-2 px-[19px]">Log in</button>
-        </a>
+        </NavigationMenu.Link>
       )}
     </>
   );
