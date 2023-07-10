@@ -1,8 +1,6 @@
 import { useState } from "react";
 import * as ToggleGroup from "@radix-ui/react-toggle-group";
-import * as Accordion from "@radix-ui/react-accordion";
-import { DownIcon } from "./icons";
-import { RatingAverage, ReviewList } from "./reviews";
+import { RatingAverage } from "./reviews";
 import type { CartItem, Product } from "../types";
 
 export const ProductInfo = ({
@@ -34,7 +32,7 @@ export const ProductInfo = ({
         </button>
       </div>
 
-      <InfoAccordion product={product} />
+      <p>{product.description}</p>
     </div>
   );
 };
@@ -68,59 +66,5 @@ export const SizeToggle = ({
         ))}
       </ToggleGroup.Root>
     </div>
-  );
-};
-
-export const InfoAccordion = ({ product }: { product: Product }) => {
-  return (
-    <Accordion.Root
-      type="multiple"
-      defaultValue={["description", "features"]}
-      className="w-full rounded mt-5"
-    >
-      <Accordion.Item
-        value="description"
-        className="mb-2 border-gray-med border-[1px] rounded-lg"
-      >
-        <Accordion.Trigger className="font-medium flex w-full items-center justify-between bg-gray-light px-4 py-3 rounded-lg [&>img]:data-[state=open]:rotate-180">
-          Description <DownIcon />
-        </Accordion.Trigger>
-        <Accordion.Content className="px-4 py-3">
-          {product.description}
-        </Accordion.Content>
-      </Accordion.Item>
-
-      <Accordion.Item
-        value="features"
-        className="mb-2 border-gray-med border-[1px] rounded-lg"
-      >
-        <Accordion.Trigger className="font-medium flex w-full items-center justify-between bg-gray-light px-4 py-3 rounded-lg [&>img]:data-[state=open]:rotate-180">
-          Features <DownIcon />
-        </Accordion.Trigger>
-        <Accordion.Content className="px-4 py-3">
-          <ul className="pl-4">
-            {product.features.map((f, i) => (
-              <li className="list-disc" key={i}>
-                {f}
-              </li>
-            ))}
-          </ul>
-        </Accordion.Content>
-      </Accordion.Item>
-
-      <Accordion.Item
-        value="reviews"
-        className="mb-2 border-gray-med border-[1px] rounded-lg"
-      >
-        <Accordion.Trigger className="font-medium flex w-full items-center justify-between bg-gray-light px-4 py-3 rounded-lg [&>img]:data-[state=open]:rotate-180">
-          Reviews <DownIcon />
-        </Accordion.Trigger>
-        <Accordion.Content className="px-4 py-3">
-          <div className="w-100 ">
-            <ReviewList reviews={product.reviews} />
-          </div>
-        </Accordion.Content>
-      </Accordion.Item>
-    </Accordion.Root>
   );
 };
